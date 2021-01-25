@@ -25,10 +25,11 @@
     if (
       shuffled.length > 0 &&
       inputValue &&
-      inputValue.trim() === shuffled[0].romaji
+      inputValue.toLowerCase().trim() === shuffled[0].romaji
     ) {
       inputValue = "";
       shuffled = shuffled.slice(1);
+      audio?.load();
     }
   }
 </script>
@@ -64,6 +65,7 @@
 
   <input
     class="bg-red-500 w-full h-30 focus:outline-none text-center text-white text-lg py-1"
+    autocapitalize="false"
     bind:value={inputValue}
   />
 </div>
