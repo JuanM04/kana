@@ -20,8 +20,9 @@
 </script>
 
 <div
-  class="select-none grid justify-center items-center"
-  class:cursor-pointer={symbol !== null}
+  class="select-none grid justify-center items-center {symbol !== null
+    ? 'cursor-pointer'
+    : ''}"
   on:mouseenter={() => (showRomaji = true)}
   on:mouseleave={() => (showRomaji = false)}
   on:click={play}
@@ -29,16 +30,16 @@
 >
   {#if symbol !== null}
     <p
-      class="text-xl transition-opacity"
-      class:opacity-0={showRomaji}
-      class:opacity-100={!showRomaji}
+      class="text-xl transition-opacity {showRomaji
+        ? 'opacity-0'
+        : 'opacity-100'}"
     >
       {symbol.char}
     </p>
     <p
-      class="text-base font-medium transition-opacity"
-      class:opacity-0={!showRomaji}
-      class:opacity-100={showRomaji}
+      class="text-base font-medium transition-opacity {showRomaji
+        ? 'opacity-100'
+        : 'opacity-0'}"
     >
       {symbol.romaji}
     </p>
