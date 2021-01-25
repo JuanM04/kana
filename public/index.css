@@ -1,0 +1,18 @@
+@import url("https://rsms.me/inter/inter.css");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  /*background: linear-gradient(
+    to right,
+    #6dd5ed,
+    #2193b0
+  ); */
+  /* @apply bg-gradient-to-r from-cyan-400 to-blue-400 text-white; */
+}
+
+.link {
+  @apply text-red-500 font-bold hover:text-red-700 transition-colors;
+}

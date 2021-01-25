@@ -1,18 +1,15 @@
 /** @type {import("snowpack").SnowpackUserConfig } */
 module.exports = {
   mount: {
-    /* ... */
+    src: "/dist",
+    public: "/",
   },
-  plugins: [
-    /* ... */
-  ],
-  routes: [
-    /* Enable an SPA Fallback in development: */
-    // {"match": "routes", "src": ".*", "dest": "/index.html"},
-  ],
+  plugins: ["@snowpack/plugin-svelte", "@snowpack/plugin-postcss"],
+  routes: [{ match: "routes", src: ".*", dest: "/index.html" }],
   optimize: {
-    /* Example: Bundle your final build: */
-    // "bundle": true,
+    bundle: true,
+    minify: true,
+    splitting: true,
   },
   packageOptions: {
     /* ... */
@@ -22,5 +19,10 @@ module.exports = {
   },
   buildOptions: {
     /* ... */
+  },
+  alias: {
+    "@components": "./src/components",
+    "@pages": "./src/pages",
+    "@kana": "./src/kana.ts",
   },
 };
