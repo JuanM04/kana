@@ -17,3 +17,19 @@
 
   <Route component={NotFound} />
 </Router>
+
+<style global lang="postcss">
+  @import url("https://rsms.me/inter/inter.css");
+
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
+
+  .link {
+    @apply text-red-500 font-bold transition-colors;
+  }
+
+  .link:hover {
+    @apply text-red-700;
+  }
+</style>
